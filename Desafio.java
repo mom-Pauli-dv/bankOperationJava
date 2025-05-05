@@ -26,6 +26,33 @@ public class Desafio {
             System.out.println(menu);
             opcion = teclado.nextInt();
 
+            switch (opcion){
+                case 1:
+                    System.out.println("El saldo disponible de la cuenta es: " + saldo + " $");
+                    break;
+                case 2:
+                    System.out.println("¿Cuanto desea retirar?");
+                    double retiro = teclado.nextDouble();
+                    if (retiro > saldo){
+                        System.out.println("No tiene suficiente saldo para realizar el retiro");
+                    }else{
+                        saldo -= retiro;
+                        System.out.println("Retiro realizado con exito, su nuevo saldo es: " + saldo + " $");
+                    }
+                    break;
+                case 3:
+                    System.out.println("¿Cuanto desea depositar?");
+                    double deposito = teclado.nextDouble();
+                    saldo += deposito;
+                    System.out.println("Deposito realizado con exito, su nuevo saldo es: " + saldo + " $");
+                    break;
+                case 9:
+                    System.out.println("Gracias por usar nuestro servicio");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+            }
+
         }
 
     }
